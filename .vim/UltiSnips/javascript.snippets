@@ -1,0 +1,99 @@
+snippet cl "console.log" b
+console.log(${1:'$2'});
+endsnippet
+
+snippet handleAction "handleAction" b
+handleAction: function(action, resource) {
+	switch(action) {
+		default:
+			break;
+	}
+},
+endsnippet
+
+snippet FFI "Fuzz Form Input" b
+<Fz.Form.Input fieldKey="$1" type="${2:text}" label="$3"  placeholder="$4" required="${5:true}" />
+endsnippet
+
+snippet FFRB "Fuzz Form Radio Buttons" b
+<Fz.Form.RadioButtons fieldKey="$1" options={[]}
+	label="$2" identifier="$3" labelAttribute="label"
+	helpText="$4" required="${5:true}" />
+endsnippet
+
+snippet FFDS "Fuzz Form Dropdown Select" b
+<Fz.Form.DropdownSelect fieldKey='$1'
+	options={$2} ${3:label={}}
+	multiple="${4:true}" placeholder={'$5'}
+	${6:callback={}} required="${7:true}" />
+endsnippet
+
+snippet FR "Fuzz Row with nested Fuzz Column" b
+<Fz.Row>
+	<Fz.Column grid="${1:lg}" size="${2:12}">
+		$0
+	</Fz.Column>
+</Fz.Row>
+endsnippet
+
+snippet FC "Fuzz Column" b
+<Fz.Column grid="${1:lg}" size="${2:12}">
+	$0
+</Fz.Column>
+endsnippet
+
+snippet FBu "Fuzz Button" b
+<Fz.Button ${1:action=""} text="$2" handleAction={${3:this.handleAction}} mods={[$4]} />
+endsnippet
+
+snippet FMox "Fuzz Modal Extened" b
+// Uncomment any of the folling lines you need to make your modal work:
+// case 'openModal':
+// 	this.setState({
+// 		openModal: true,
+// 		workingResource: this.state.workingResource
+// 	});
+// 	break;
+//
+// /**
+//  * Close all modals and reset the working resource
+//  */
+// closeModal: function () {
+// 	this.setState({
+// 		openModal       : false,
+// 		workingResource : {}
+// 	});
+// },
+
+<Fz.Modal openWhen={${1:this.state.openModal}}
+	title="$2" closeText="$3"
+	saveText="$4" beforeSave={$5}
+	afterClose={this.closeModal} afterSave={this.closeModal}
+	options={{width: '${6:70%}'}}>
+</Fz.Modal>
+endsnippet
+
+snippet FMo "Fuzz Modal" b
+<Fz.Modal openWhen={${1:this.state.openModal}}
+	title="$2" closeText="$3"
+	saveText="$4" beforeSave={$5}
+	afterClose={this.closeModal} afterSave={this.closeModal}
+	options={{width: '${6:70%}'}}>
+</Fz.Modal>
+endsnippet
+
+snippet FAA "Fuzz AddAction" b
+<AddAction createResource={${0:this.handleAction}} />
+endsnippet
+
+snippet FAAN "Fuzz AddAction, Nested" b
+<Fz.Row>
+	<Fz.Column grid="${1:lg}" size="${2:2}" classes="pull-right">
+		<AddAction createResource={${3:this.handleAction}} />
+	</Fz.Column>
+</Fz.Row>
+endsnippet
+
+snippet edit "Mutate Edit Action" b
+return <a href="javascript:void(0)" onClick={handleAction.bind(null, 'edit', object.id)}> {$1} </a>
+endsnippet
