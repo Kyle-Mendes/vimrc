@@ -1,0 +1,10 @@
+{
+        "ecmaFeatures": {
+                "jsx": true,
+                "arrowFunctions": true,
+        },
+        "env": {
+                "mocha": true,
+                "node": true
+        }
+}
