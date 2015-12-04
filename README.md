@@ -16,6 +16,9 @@ That should be it. Some plugins might have extra steps to getting them installed
 
 I will update this with additional installation instructions, and comments on customizations to Vim and it's config.
 
+### Learning
+Need help learning how to use vim?  Tons of documentation is available online, and in many formats.  I'll be writing a bit about each of the plugins and their uses, but for now, you can check out the github pages for these plugins or, even better, use `:help <PluginName>` to the author's help documentation.
+
 ### Customizing
 If there's anything you don't like, check the `.vimrc` to make changes.  I've tried to include comments for a lot of the changes I've made, so you can tweak or disable them as you find fit.
 
