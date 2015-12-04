@@ -115,6 +115,9 @@ autocmd Filetype typescript setlocal expandtab! tabstop=4 shiftwidth=4 softtabst
 autocmd Filetype ts setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
 let g:syntastic_javascript_checkers = ['eslint']
 
+nmap <leader>j :JsDoc <CR>
+let g:jsdoc_allow_input_prompt=1
+
 " PHP
 autocmd Filetype php setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
 

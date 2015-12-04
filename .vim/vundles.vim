@@ -45,6 +45,7 @@ Plugin 'timonv/vim-cargo'             " Vim Cargo (rust)
 Plugin 'pangloss/vim-javascript'      " Enhanced JS syntax and indenting
 Plugin 'mxw/vim-jsx'                  " React Syntax highlighting and Indenting (for jsx)
 Plugin 'leafgarland/typescript-vim'   " Typescript syntax and editor support
+Plugin 'heavenshell/vim-jsdoc'        " JSDoc generator
 " Plugin 'Quramy/tsuquyomi'             " Typescript's TSServer support. requires vimproc
 
 " Haskell
