@@ -1,12 +1,10 @@
-" Vundle should manage itself
-Plugin 'gmarik/Vundle.vim'
-
 "" PLUGINS
 " Plugin 'tpope/vim-sleuth'             " Vim-Sleuth
 Plugin 'godlygeek/tabular'            " Tabular for beautiful text alignment
 Plugin 'henrik/vim-indexed-search'    " Indexed Search
 Plugin 'rking/ag.vim'                 " Ag file searching
 Plugin 'kien/ctrlp.vim'               " Ctrlp file searching. Fuzzy searching of files
+Plugin 'junegunn/fzf'                 " Fuzzy searching (Doesn't work with mvim)
 Plugin 'scrooloose/syntastic'         " Syntax checking for a number of languages
 Plugin 'airblade/vim-gitgutter'       " Git gutter, show git changes in the gutter
 Plugin 'tpope/vim-fugitive'           " FuGITive git support
@@ -15,7 +13,9 @@ Plugin 'tpope/vim-commentary'         " Commentary for easy commenting
 Plugin 'mattn/emmet-vim'              " Emmet
 Plugin 'jiangmiao/auto-pairs'         " Auto pairs for parethesis and other paired characters
 Plugin 'tpope/vim-surround'           " Easy add / edit / remove surrounding tags / parenthesis
+Plugin 'matze/vim-move'               " Eady movement of lines using <A-j> <A-k>
 Plugin 'SirVer/ultisnips'             " UltiSnips for easy and amazing snippet support
+Plugin 'majutsushi/tagbar'            " For easy tag navigation if using ctags
 " Plugin 'Shougo/vimproc.vim'           " Needs to be compiled by runinning `make` in /bundles/vimproc Support for tsuquyomi
 
 "" Theme Support
@@ -50,6 +50,9 @@ Plugin 'heavenshell/vim-jsdoc'        " JSDoc generator
 
 " Haskell
 Plugin 'dag/vim2hs'                   " Haskell improvements
+
+" Go
+Plugin 'fatih/vim-go'                 " Total Go Support
 
 " PHP
 " Plugin 'arnaud-lb/vim-php-namespace'  " Automatic PHP namespacing

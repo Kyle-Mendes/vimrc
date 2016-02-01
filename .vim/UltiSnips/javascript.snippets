@@ -1,6 +1,36 @@
+####################
+# General Snippets #
+####################
+
 snippet cl "console.log" b
 console.log(${1:'$2'});
 endsnippet
+
+
+######################
+# Snippets for JSDoc #
+######################
+
+snippet jsdp "JSDoc Property" b
+@property {$1} ${2:name}
+endsnippet
+
+##########################
+# Snippets for Mortar.js #
+##########################
+
+snippet cdm "Component Did Mount" b
+componentDidMount: function() {
+	${1}
+},
+
+componentWillUnount: function() {
+	${2}
+},
+
+endsnippet
+
+
 
 snippet handleAction "handleAction" b
 handleAction: function(action, resource) {
@@ -23,9 +53,9 @@ endsnippet
 
 snippet FFDS "Fuzz Form Dropdown Select" b
 <Fz.Form.DropdownSelect fieldKey='$1'
-	options={$2} ${3:label={}}
-	multiple="${4:true}" placeholder={'$5'}
-	${6:callback={}} required="${7:true}" />
+	options={$2} ${3:label=''}
+	multiple={${4:true}} placeholder='$5'
+	${6:callback={}} required={${7:true}} />
 endsnippet
 
 snippet FR "Fuzz Row with nested Fuzz Column" b

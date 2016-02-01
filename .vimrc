@@ -24,6 +24,8 @@ let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 set tags=./tags;~/Sites
 let g:easytags_dynamic_files = 1
+set lazyredraw
+set ttyfast
 
 
 " ~~~VUNDLE ~~~
@@ -34,6 +36,9 @@ let g:easytags_dynamic_files = 1
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()            " Starts vundle, so all plugins are ready.
+
+" Vundle should manage itself
+Plugin 'gmarik/Vundle.vim'
 
 source ~/.vim/vundles.vim      " Source our vundle config to grab all of our installed plugins
 
@@ -61,6 +66,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
 " imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 " let g:user_emmet_install_global = 0
 " autocmd FileType html,php,css EmmetInstall
+"
+set rtp+=~/.fzf " A fuzyz finder written in Go (https://github.com/junegunn/fzf)
 
 " Using Control + Vim navigation switched between panes and splits
 map <C-j> <C-W>j
@@ -117,6 +124,8 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 nmap <leader>j :JsDoc <CR>
 let g:jsdoc_allow_input_prompt=1
+let g:jsdoc_access_descriptions=2
+let g:jsdoc_underscore_private=1
 
 " PHP
 autocmd Filetype php setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
@@ -163,7 +172,7 @@ set list lcs=trail:·,tab:¦\                  " show trailing spaces and all ta
 
 fun! StripTrailingWhitespace()               " Removes trailing whitespace on file save
   " Don't strip on these filetypes
-  if &ft =~ 'vim\|'
+  if &ft =~ 'vim\|conf'
     " return
   endif
   %s/\s\+$//e
@@ -197,4 +206,5 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 autocmd BufWritePre * call StripTrailingWhitespace() " Call our whitespace function
 
 source ~/.vim/lightline-config.vim                   " Add lightline
+source ~/.vim/tagbar.vim                             " Tagbar configuration
 
