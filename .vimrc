@@ -113,13 +113,18 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>       " Bindings for running tests
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+let vim_markdown_preview_toggle=2
+let vim_markdown_preview_github=1
+let vim_markdown_preview_hotkey='<C-m>'      " Hitting control+m will open markdown preview
 
 " Javascript uses tab characters to indent, tabs are 4 characters wide
 autocmd Filetype javascript setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype js setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
-autocmd Filetype json setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype typescript setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype ts setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype go setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype markdown setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 let g:syntastic_javascript_checkers = ['eslint']
 
 nmap <leader>j :JsDoc <CR>
@@ -130,11 +135,11 @@ let g:jsdoc_underscore_private=1
 " PHP
 autocmd Filetype php setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
 
-nnoremap <Leader>u <C-O>:call PhpInsertUse()<CR>   " Hitting LEADER u will import classes automatically
-noremap <Leader>u :call PhpInsertUse()<CR>
+" nnoremap <Leader>u <C-O>:call PhpInsertUse()<CR>   " Hitting LEADER u will import classes automatically
+" noremap <Leader>u :call PhpInsertUse()<CR>
 
-nnoremap <Leader>e <C-O>:call PhpExpandClass()<CR> " Hitting LEADER e will expand classes automatically
-noremap <Leader>e :call PhpExpandClass()<CR>
+" nnoremap <Leader>e <C-O>:call PhpExpandClass()<CR> " Hitting LEADER e will expand classes automatically
+" noremap <Leader>e :call PhpExpandClass()<CR>
 
 " SCSS
 autocmd Filetype css setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
@@ -152,14 +157,30 @@ autocmd Filetype html setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
 " use 256 colors in terminal
 if !has("gui_running")
   set t_Co=256
-  " set term=screen-256color
+  set term=xterm-256color
 endif
 
 set t_ut=                                    " Fix for bg color in tmux and other terminals
+
+" ~~ Flat Color
+" let base16colorspace=256
+" let g:flatcolor_asphaltbg=0                  " Customization for the flat colorscheme
+" let g:flatcolor_termcolors=16
+" set bg=light
+" colorscheme white-sand                       " Set the colorscheme to 'flatcolor'
+
+" ~~ Flat Color
+" let base16colorspace=256
+" let g:flatcolor_termcolors=16
+" let g:flatcolor_asphaltbg=0                  " Customization for the flat colorscheme
+" colorscheme flatcolor                       " Set the colorscheme to 'flatcolor'
+
+" ~~  Onedark
 let base16colorspace=256
-colorscheme flatcolor                        " Set the colorscheme to 'flatcolor'
-let g:flatcolor_asphaltbg=0                  " Customization for the flat colorscheme
-let g:flatcolor_termcolors=16
+let g:onedark_terminal_italics=0
+let g:onedark_termcolors=16
+colorscheme onedark                        " Set the colorscheme to 'flatcolor'
+
 set background=dark                          " Use dark bg.  Set to light for light colorschemes.
 set number                                   " Show line numebrs
 set relativenumber                           " Show relative number of lines from the current line

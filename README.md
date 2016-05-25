@@ -5,6 +5,7 @@
   - `mv .vimrc ~/`
   - `mv .gvimrc ~/`
   - `mv .vim ~/.vim`
+1. Make sure you're running at least Vim version 7.4  If you're not, you can use brew to update / install.
 1. Install [Vundle](https://github.com/VundleVim/Vundle.vim) `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 1. Open vim
 1. run `:PluginInstall`

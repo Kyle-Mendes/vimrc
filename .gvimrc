@@ -5,3 +5,13 @@ set background=dark
 source ~/.vimrc
 
 let NERDTreeQuitOnOpen = 0
+
+function! g:LightScheme()
+  set bg=light
+  colorscheme soft-morning
+endfunction
+
+function! g:DarkScheme()
+  set bg=dark
+  colorscheme flatcolor
+endfunction

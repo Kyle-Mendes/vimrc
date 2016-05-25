@@ -30,11 +30,13 @@ Plugin 'chriskempson/base16-vim'      " Base16 Colors
 Plugin 'whatyouhide/vim-gotham'       " Gotham Theme
 Plugin 'MaxSt/FlatColor'              " FlatColor Theme
 Plugin 'joshdick/onedark.vim'         " Based of Atom's one Dark
+Plugin 'mswift42/vim-themes'          " Port of emacs themes
 
 "" Language Support
 " General
 Plugin 'janko-m/vim-test'             " Testing support
 Plugin 'Valloric/YouCompleteMe'       " YouCompleteMe
+Plugin 'JamshedVesuna/vim-markdown-preview' " Markdown previewer
 
 " Rust
 Plugin 'rust-lang/rust.vim'           " Rust
