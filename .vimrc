@@ -228,4 +228,5 @@ autocmd BufWritePre * call StripTrailingWhitespace() " Call our whitespace funct
 
 source ~/.vim/lightline-config.vim                   " Add lightline
 source ~/.vim/tagbar.vim                             " Tagbar configuration
+source ~/.vim/ctrlp.vim                              " CtrlP configuration
 
