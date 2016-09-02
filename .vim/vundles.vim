@@ -30,6 +30,7 @@ Plugin 'chriskempson/base16-vim'      " Base16 Colors
 Plugin 'whatyouhide/vim-gotham'       " Gotham Theme
 Plugin 'MaxSt/FlatColor'              " FlatColor Theme
 Plugin 'joshdick/onedark.vim'         " Based of Atom's one Dark
+Plugin 'morhetz/gruvbox'              " GruzBox theme
 Plugin 'mswift42/vim-themes'          " Port of emacs themes
 
 "" Language Support

@@ -126,6 +126,7 @@ autocmd Filetype ts setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype go setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype markdown setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 let g:syntastic_javascript_checkers = ['eslint']
+let g:jsx_ext_required = 0 " Don't require the .jsx ending for JSX package to work
 
 nmap <leader>j :JsDoc <CR>
 let g:jsdoc_allow_input_prompt=1
@@ -157,6 +158,8 @@ autocmd Filetype html setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
 " use 256 colors in terminal
 if !has("gui_running")
   set t_Co=256
+  set t_AB=^[[48;5;%dm
+  set t_AF=^[[38;5;%dm]]]]
   set term=xterm-256color
 endif
 
