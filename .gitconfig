@@ -1,0 +1,10 @@
+[user]
+	name = Kyle Mendes
+	email = kyleamendes@gmail.com
+
+[alias]
+	co = checkout
+	amend = commit --amend
+	ammend = commit --amend
+[core]
+	ignorecase = false

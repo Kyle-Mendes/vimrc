@@ -2,8 +2,8 @@
 " Plugin 'tpope/vim-sleuth'             " Vim-Sleuth
 Plugin 'godlygeek/tabular'            " Tabular for beautiful text alignment
 Plugin 'henrik/vim-indexed-search'    " Indexed Search
-Plugin 'rking/ag.vim'                 " Ag file searching
-Plugin 'kien/ctrlp.vim'               " Ctrlp file searching. Fuzzy searching of files
+Plugin 'mileszs/ack.vim'              " Ack file searching
+Plugin 'ctrlpvim/ctrlp.vim'           " Ctrlp file searching. Fuzzy searching of files
 Plugin 'junegunn/fzf'                 " Fuzzy searching (Doesn't work with mvim)
 Plugin 'scrooloose/syntastic'         " Syntax checking for a number of languages
 Plugin 'airblade/vim-gitgutter'       " Git gutter, show git changes in the gutter
@@ -16,6 +16,7 @@ Plugin 'tpope/vim-surround'           " Easy add / edit / remove surrounding tag
 Plugin 'matze/vim-move'               " Eady movement of lines using <A-j> <A-k>
 Plugin 'SirVer/ultisnips'             " UltiSnips for easy and amazing snippet support
 Plugin 'majutsushi/tagbar'            " For easy tag navigation if using ctags
+Plugin 'ludovicchabant/vim-gutentags' " Generate tags without dependencies
 " Plugin 'Shougo/vimproc.vim'           " Needs to be compiled by runinning `make` in /bundles/vimproc Support for tsuquyomi
 
 "" Theme Support
@@ -32,12 +33,13 @@ Plugin 'MaxSt/FlatColor'              " FlatColor Theme
 Plugin 'joshdick/onedark.vim'         " Based of Atom's one Dark
 Plugin 'morhetz/gruvbox'              " GruzBox theme
 Plugin 'mswift42/vim-themes'          " Port of emacs themes
+Plugin 'jsit/disco.vim'               " Discoooooo!
 
 "" Language Support
 " General
 Plugin 'janko-m/vim-test'             " Testing support
 Plugin 'Valloric/YouCompleteMe'       " YouCompleteMe
-Plugin 'JamshedVesuna/vim-markdown-preview' " Markdown previewer
+Plugin 'gcorne/vim-sass-lint'         " Sass-lint support
 
 " Rust
 Plugin 'rust-lang/rust.vim'           " Rust
@@ -49,6 +51,9 @@ Plugin 'pangloss/vim-javascript'      " Enhanced JS syntax and indenting
 Plugin 'mxw/vim-jsx'                  " React Syntax highlighting and Indenting (for jsx)
 Plugin 'leafgarland/typescript-vim'   " Typescript syntax and editor support
 Plugin 'heavenshell/vim-jsdoc'        " JSDoc generator
+Plugin 'ternjs/tern_for_vim'          " Tern for JS
+Plugin 'posva/vim-vue'                " Support for Vue files
+Plugin 'flowtype/vim-flow'            " Support for flow
 " Plugin 'Quramy/tsuquyomi'             " Typescript's TSServer support. requires vimproc
 
 " Haskell

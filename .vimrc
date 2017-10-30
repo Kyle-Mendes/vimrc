@@ -1,3 +1,5 @@
+set encoding=utf-8
+scriptencoding utf-8
 set nocompatible " be iMproved, required
 filetype off     " required
 set showmode
@@ -101,6 +103,8 @@ let g:syntastic_auto_loc_list = 1            " Show where errors are
 let g:syntastic_check_on_open = 0            " Don't check when we first open a file
 let g:syntastic_check_on_wq = 0
 let g:syntastic_html_checkers=['']           " Don't check HTML files.  It doesn't like angular, so there's a million errors
+let g:syntastic_sass_checkers=["sasslint"]
+let g:syntastic_scss_checkers=["sasslint"]   " Lint Sass
 
 " ============ Languages ===============
 filetype plugin on                           " Autodetect filetype
@@ -113,19 +117,26 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>       " Bindings for running tests
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
-let vim_markdown_preview_toggle=2
-let vim_markdown_preview_github=1
-let vim_markdown_preview_hotkey='<C-m>'      " Hitting control+m will open markdown preview
 
 " Javascript uses tab characters to indent, tabs are 4 characters wide
 autocmd Filetype javascript setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype vue setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype js setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype typescript setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype ts setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype go setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype golang setlocal expandtab! tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype markdown setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
+let g:syntastic_javascript_flow_exe = "flow"
+let g:javascript_plugin_flow = 1  " Enable flow support
+let g:javascript_plugin_jsdoc = 1
+let g:flow#autoclose = 1
+
+let g:syntastic_vue_checkers = ['eslint']
 let g:jsx_ext_required = 0 " Don't require the .jsx ending for JSX package to work
 
 nmap <leader>j :JsDoc <CR>
@@ -163,6 +174,27 @@ if !has("gui_running")
   set term=xterm-256color
 endif
 
+let base16colorspace=256
+colorscheme gruvbox
+set guifont=Fira\ Mono\ Medium\ for\ Powerline:h12,Inconsolata:h14,Monaco:h14
+set background=dark
+
+function! g:LightScheme()
+  set bg=light
+  colorscheme gruvbox
+endfunction
+
+function! g:DarkScheme()
+  set bg=dark
+  colorscheme gruvbox
+endfunction
+
+function! g:NightScheme()
+  set bg=dark
+  colorscheme onedark
+endfunction
+
+
 set t_ut=                                    " Fix for bg color in tmux and other terminals
 
 " ~~ Flat Color
@@ -179,10 +211,10 @@ set t_ut=                                    " Fix for bg color in tmux and othe
 " colorscheme flatcolor                       " Set the colorscheme to 'flatcolor'
 
 " ~~  Onedark
-let base16colorspace=256
-let g:onedark_terminal_italics=0
-let g:onedark_termcolors=16
-colorscheme onedark                        " Set the colorscheme to 'flatcolor'
+" le base16colorspace=256
+" let g:onedark_terminal_italics=0
+" let g:onedark_termcolors=16
+" colorscheme onedark                        " Set the colorscheme to 'flatcolor'
 
 set background=dark                          " Use dark bg.  Set to light for light colorschemes.
 set number                                   " Show line numebrs

@@ -2,6 +2,7 @@
         "ecmaFeatures": {
                 "jsx": true,
                 "arrowFunctions": true,
+                "es6": true
         },
         "env": {
                 "mocha": true,
